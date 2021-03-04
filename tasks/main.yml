@@ -1,0 +1,21 @@
+---
+# tasks file for 2_role_gather_facts
+- name: Guarda los gather facts recopilados de nuestras instancias
+  setup:
+  register: facts_recopilados
+
+## Enlaces de interés
+## https://docs.ansible.com/ansible/latest/user_guide/playbooks_vars_facts.html#ansible-facts
+## https://www.middlewareinventory.com/blog/ansible-facts-list-how-to-use-ansible-facts
+
+- name: Version del S.O
+  debug:
+    msg:
+      - "La distribucion de ansible es: {{ ansible_distribution_file_variety }}"
+      - "La version de la distribucion es: {{ ansible_distribution_major_version }}"
+      - "El archivo de release es: {{ ansible_distribution_file_path }}"
+      - "La version del kernel es: {{ ansible_kernel }}"
+
+- name: Muestra los gather facts recopilados
+  debug:
+    var: facts_recopilados

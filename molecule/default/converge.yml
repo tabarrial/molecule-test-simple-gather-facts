@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include 2_role_gather_facts"
+      include_role:
+        name: "2_role_gather_facts"
