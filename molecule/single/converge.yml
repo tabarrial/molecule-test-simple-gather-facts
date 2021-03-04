@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include 2_role_gather_facts"
+    - name: "Include molecule-test-simple-gather-facts"
       include_role:
-        name: "2_role_gather_facts"
+        name: "molecule-test-simple-gather-facts"
